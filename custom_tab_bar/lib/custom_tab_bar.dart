@@ -144,6 +144,9 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
     int index,
     HSYCustomTabBarItemConfigs item,
   }) {
+    if (_selectedIndex == index && this.widget.onChanged != null) {
+      this.widget.onChanged(_selectedIndex, item);
+    }
     _selectedIndex = index;
     _tabController.animateTo(
       _selectedIndex,

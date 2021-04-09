@@ -146,7 +146,9 @@ class _TestCustomTabBarState extends State<TestCustomTabBar>
     _tabController = TabController(
       length: _configs.length,
       vsync: this,
-    );
+    )..addListener(() {
+      print('------------_tabController.index=${_tabController.index}---------');
+    });
   }
 
   @override

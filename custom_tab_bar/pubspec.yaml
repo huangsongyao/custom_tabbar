@@ -1,6 +1,6 @@
 name: custom_tab_bar
 description: 高度自定义TabBar
-version: 0.0.9
+version: 0.1.0
 homepage: https://github.com/huangsongyao/custom_tabbar
 
 environment:
