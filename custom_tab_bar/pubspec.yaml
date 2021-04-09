@@ -1,8 +1,7 @@
 name: custom_tab_bar
 description: 高度自定义TabBar
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/huangsongyao/custom_tabbar
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
