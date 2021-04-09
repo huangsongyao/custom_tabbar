@@ -116,13 +116,13 @@ class HSYCustomTabBarConfigs {
         ? (this.selectedStyle ??
             TextStyle(
               fontSize: 15,
-              color: Colors.black45,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
             ))
         : (this.unselectedStyle ??
             TextStyle(
               fontSize: 15,
               color: Colors.black45,
-              fontWeight: FontWeight.bold,
             )));
   }
 }

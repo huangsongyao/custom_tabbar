@@ -103,7 +103,16 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             HSYCustomTabBar(
-              initTabBarConfigs: HSYCustomTabBarConfigs(),
+              initTabBarConfigs: HSYCustomTabBarConfigs(
+                itemConfigs: [
+                  HSYCustomTabBarItemConfigs(text: '已入金'),
+                  HSYCustomTabBarItemConfigs(text: '已注册'),
+                  HSYCustomTabBarItemConfigs(text: '已交易'),
+                  HSYCustomTabBarItemConfigs(text: '已认证'),
+                  HSYCustomTabBarItemConfigs(text: '已理财'),
+                  HSYCustomTabBarItemConfigs(text: '已登录')
+                ],
+              ),
             ),
             Text(
               '$_counter',
