@@ -54,7 +54,7 @@
         <entry key="custom_tab_bar">
           <value>
             <list>
-              <option value="$USER_HOME$/flutter/.pub-cache/hosted/pub.flutter-io.cn/custom_tab_bar-0.0.3/lib" />
+              <option value="$USER_HOME$/flutter/.pub-cache/hosted/pub.flutter-io.cn/custom_tab_bar-0.0.4/lib" />
             </list>
           </value>
         </entry>
@@ -173,7 +173,7 @@
       <root url="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.flutter-io.cn/clock-1.1.0-nullsafety.1/lib" />
       <root url="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.flutter-io.cn/collection-1.15.0-nullsafety.3/lib" />
       <root url="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.flutter-io.cn/cupertino_icons-1.0.0/lib" />
-      <root url="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.flutter-io.cn/custom_tab_bar-0.0.3/lib" />
+      <root url="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.flutter-io.cn/custom_tab_bar-0.0.4/lib" />
       <root url="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.flutter-io.cn/fake_async-1.2.0-nullsafety.1/lib" />
       <root url="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.flutter-io.cn/matcher-0.12.10-nullsafety.1/lib" />
       <root url="file://$USER_HOME$/flutter/.pub-cache/hosted/pub.flutter-io.cn/meta-1.3.0-nullsafety.3/lib" />

@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="616309f2-a452-4e6c-abbe-48eb81b5e41b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../custom_tab_bar/lib/custom_tab_configs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../custom_tab_bar/lib/custom_tab_configs.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../custom_tab_bar/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../custom_tab_bar/pubspec.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/pubspec.yaml" afterDir="false" />
     </list>
@@ -91,13 +92,29 @@
       <screen x="755" y="-1057" width="1920" height="1057" />
     </state>
     <state x="1452" y="-732" key="#com.intellij.ide.util.TreeFileChooserDialog/-1165.-1057.1920.1057/0.23.1792.1026/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1617951594321" />
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1617954825402">
+      <screen x="755" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom/-1165.-1057.1920.1057/0.23.1792.1026/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1617954825402" />
+    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1617954825401">
+      <screen x="755" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.center/-1165.-1057.1920.1057/0.23.1792.1026/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1617954825401" />
+    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1617954825401">
+      <screen x="755" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.left/-1165.-1057.1920.1057/0.23.1792.1026/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1617954825401" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1617954825401">
+      <screen x="755" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.right/-1165.-1057.1920.1057/0.23.1792.1026/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1617954825401" />
     <state x="1216" y="-890" key="SettingsEditor" timestamp="1617951559813">
       <screen x="755" y="-1057" width="1920" height="1057" />
     </state>
     <state x="1216" y="-890" key="SettingsEditor/-1165.-1057.1920.1057/0.23.1792.1026/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1617951559813" />
-    <state x="1407" y="-774" width="615" height="490" key="find.popup" timestamp="1617951707588">
+    <state x="1407" y="-774" width="615" height="490" key="find.popup" timestamp="1617954885843">
       <screen x="755" y="-1057" width="1920" height="1057" />
     </state>
-    <state x="1407" y="-774" width="615" height="490" key="find.popup/-1165.-1057.1920.1057/0.23.1792.1026/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1617951707588" />
+    <state x="1407" y="-774" width="615" height="490" key="find.popup/-1165.-1057.1920.1057/0.23.1792.1026/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1617954885843" />
   </component>
 </project>

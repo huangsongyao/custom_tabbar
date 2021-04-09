@@ -66,15 +66,52 @@ class HSYCustomTabBarIndicatorConfig {
   });
 
   factory HSYCustomTabBarIndicatorConfig.indicator() {
-    return HSYCustomTabBarIndicatorConfig(
+    return HSYCustomTabBarIndicatorConfig.indicator2(
+        HSYCustomTabBarIndicatorHeights);
+  }
+
+  factory HSYCustomTabBarIndicatorConfig.indicator2(double heights) {
+    return HSYCustomTabBarIndicatorConfig.indicator3(
+      Size(kToolbarHeight, heights),
+    );
+  }
+
+  factory HSYCustomTabBarIndicatorConfig.indicator3(Size size) {
+    return HSYCustomTabBarIndicatorConfig.indicator4(
+      size: size,
       tops: 8.0,
       bottom: 8.0,
-      heights: HSYCustomTabBarIndicatorHeights,
-      widths: kToolbarHeight,
+    );
+  }
+
+  factory HSYCustomTabBarIndicatorConfig.indicator4({
+    Size size,
+    double tops,
+    double bottom,
+  }) {
+    return HSYCustomTabBarIndicatorConfig.indicator5(
+      size: size,
+      tops: tops,
+      bottom: bottom,
       colors: [
         Color(0xFF02F260),
         Color(0xFF0575E6),
       ],
+    );
+  }
+
+  factory HSYCustomTabBarIndicatorConfig.indicator5({
+    Size size,
+    double tops,
+    double bottom,
+    List<Color> colors,
+  }) {
+    return HSYCustomTabBarIndicatorConfig(
+      tops: tops,
+      bottom: bottom,
+      heights: size.height,
+      widths: size.width,
+      colors: colors,
     );
   }
 }
