@@ -112,6 +112,17 @@ class HSYCustomTabBarConfigs {
   }
 
   TextStyle selectedHighStyle(bool selected) {
-    return (selected ? this.selectedStyle : this.unselectedStyle);
+    return (selected
+        ? (this.selectedStyle ??
+            TextStyle(
+              fontSize: 15,
+              color: Colors.black45,
+            ))
+        : (this.unselectedStyle ??
+            TextStyle(
+              fontSize: 15,
+              color: Colors.black45,
+              fontWeight: FontWeight.bold,
+            )));
   }
 }
