@@ -4,11 +4,8 @@
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+正常的TabBar方式使用。
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+HSYCustomTabBar: 自定义的TabBar小部件，内部实现了对TabBar的自定义效果
+HSYCustomTabBarConfigs: 自定义TabBar的定义参数模型及相关内容
+CustomIndicator: 自定义的indicator指示器
