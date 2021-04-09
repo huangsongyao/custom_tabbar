@@ -14,12 +14,14 @@ class HSYCustomTabBar extends StatefulWidget {
   final HSYCustomTabBarChangedItem onChanged;
   final HSYCustomTabBarConfigs initTabBarConfigs;
   final TabController tabController;
+  final Duration animatedDuration;
   final double tabHeights;
 
   HSYCustomTabBar({
     @required this.initTabBarConfigs,
     this.tabHeights = kToolbarHeight,
     this.tabBarPadding = EdgeInsets.zero,
+    this.animatedDuration = const Duration(milliseconds: 350),
     this.initSelectedIndex = 0,
     this.backgroundDecoration,
     this.tabController,
@@ -45,7 +47,29 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
           initialIndex: _selectedIndex,
           length: this.widget.initTabBarConfigs.tabBarItemConfigs.length,
           vsync: this,
-        ));
+        ))
+      ..addListener(
+        () {
+          if (_tabController.animation.status == AnimationStatus.completed &&
+              _tabController.animation.isCompleted &&
+              _tabController.index.toDouble() ==
+                  _tabController.animation.value &&
+              this.widget.onChanged != null) {
+            Future.delayed(
+              this.widget.animatedDuration,
+              () {
+                this.widget.onChanged(
+                      _tabController.index,
+                      this
+                          .widget
+                          .initTabBarConfigs
+                          .itemConfigs[_tabController.index],
+                    );
+              },
+            );
+          }
+        },
+      );
   }
 
   @override
@@ -118,24 +142,14 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
 
   void _animatedTo({
     int index,
-    bool toNotices = true,
     HSYCustomTabBarItemConfigs item,
   }) {
     _selectedIndex = index;
-    final Duration duration = Duration(milliseconds: 350);
     _tabController.animateTo(
       _selectedIndex,
-      duration: duration,
+      duration: this.widget.animatedDuration,
       curve: Curves.ease,
     );
-    if (toNotices && (this.widget.onChanged != null)) {
-      Future.delayed(
-        duration,
-        () {
-          this.widget.onChanged(_selectedIndex, item);
-        },
-      );
-    }
   }
 }
 

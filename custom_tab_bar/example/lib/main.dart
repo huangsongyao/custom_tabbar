@@ -83,11 +83,10 @@ class _MyHomePageState extends State<MyHomePage> {
           HSYCustomTabBarIndicatorConfig.indicator3(Size(20.0, 2.0)),
         ),
         onChanged: (int index, HSYCustomTabBarItemConfigs itemConfigs) {
-          Future.delayed(Duration(milliseconds: 0), () {
+          setState(() {
             _string = itemConfigs.text;
             _counter = index;
             print('--------------${_string}-----------${_counter}');
-            setState(() {});
           });
         },
       ),
