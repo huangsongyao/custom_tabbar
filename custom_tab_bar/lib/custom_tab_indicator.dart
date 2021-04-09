@@ -14,10 +14,10 @@ class CustomIndicator extends Decoration {
   final EdgeInsets indicatorPadding;
 
   /// 指示器的宽度，和[indicatorPadding]属性互斥
-  final double indiatorWidth;
+  final double indicatorWidth;
 
   /// 画笔的宽度，既指示器的高度
-  final double indiatorHeights;
+  final double indicatorHeights;
 
   /// 渐变色指示器的渐变起始点
   final Alignment begin;
@@ -38,8 +38,8 @@ class CustomIndicator extends Decoration {
     ),
     this.begin = Alignment.centerLeft,
     this.end = Alignment.centerRight,
-    this.indiatorHeights = 3.0,
-    this.indiatorWidth,
+    this.indicatorHeights = 3.0,
+    this.indicatorWidth,
   });
 
   @override
@@ -62,11 +62,11 @@ class _CustomBoxPainter extends BoxPainter {
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-    final bool useIndiatorWidth = (this.decoration.indiatorWidth != null);
+    final bool useIndiatorWidth = (this.decoration.indicatorWidth != null);
     if (useIndiatorWidth) {
       assert(
-        this.decoration.indiatorWidth > 0 &&
-            this.decoration.indiatorWidth <= configuration.size.width,
+        this.decoration.indicatorWidth > 0 &&
+            this.decoration.indicatorWidth <= configuration.size.width,
         '指示器的宽度必须大于0，且必须小于等于tab的宽度',
       );
     }
@@ -82,19 +82,19 @@ class _CustomBoxPainter extends BoxPainter {
       '指示器的左右边距必须小于选中的tab的宽度',
     );
     assert(
-      (this.decoration.indiatorHeights >= 0 &&
-          this.decoration.indiatorHeights < configuration.size.width / 2 &&
-          this.decoration.indiatorHeights < configuration.size.height / 2),
+      (this.decoration.indicatorHeights >= 0 &&
+          this.decoration.indicatorHeights < configuration.size.width / 2 &&
+          this.decoration.indicatorHeights < configuration.size.height / 2),
       '画笔的宽度必须大于等于0，且小于tab的size的二分之一',
     );
 
     Size indicatorSize = Size(
         (useIndiatorWidth
-            ? this.decoration.indiatorWidth
+            ? this.decoration.indicatorWidth
             : (configuration.size.width -
                 this.decoration.indicatorPadding.left -
                 this.decoration.indicatorPadding.right)),
-        this.decoration.indiatorHeights);
+        this.decoration.indicatorHeights);
     Offset indicatorOffset = Offset(
         (offset.dx + ((configuration.size.width - indicatorSize.width) / 2.0)),
         (offset.dy +
@@ -106,7 +106,7 @@ class _CustomBoxPainter extends BoxPainter {
     final Rect rect = indicatorOffset & indicatorSize;
     final Paint paint = Paint()
       ..style = this.decoration.paintingStyle
-      ..strokeWidth = this.decoration.indiatorHeights
+      ..strokeWidth = this.decoration.indicatorHeights
       ..shader = LinearGradient(
         colors: this.decoration.colors,
         begin: this.decoration.begin,

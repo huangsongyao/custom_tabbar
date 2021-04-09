@@ -104,9 +104,9 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
         controller: _tabController,
         indicator: CustomIndicator(
           radius: this.widget.initTabBarConfigs.tabBarIndicatorConfig.radius,
-          indiatorWidth:
+          indicatorWidth:
               this.widget.initTabBarConfigs.tabBarIndicatorConfig.widths,
-          indiatorHeights:
+          indicatorHeights:
               this.widget.initTabBarConfigs.tabBarIndicatorConfig.heights,
           colors: this.widget.initTabBarConfigs.tabBarIndicatorConfig.colors,
         ),
