@@ -122,13 +122,19 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
     HSYCustomTabBarItemConfigs item,
   }) {
     _selectedIndex = index;
+    final Duration duration = Duration(milliseconds: 350);
     _tabController.animateTo(
       _selectedIndex,
-      duration: Duration(milliseconds: 500),
+      duration: duration,
       curve: Curves.ease,
     );
     if (toNotices && (this.widget.onChanged != null)) {
-      this.widget.onChanged(index, item);
+      Future.delayed(
+        duration,
+        () {
+          this.widget.onChanged(_selectedIndex, item);
+        },
+      );
     }
   }
 }

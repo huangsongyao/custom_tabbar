@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  custom_tab_bar: ^0.0.4
+  custom_tab_bar: ^0.0.5
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
