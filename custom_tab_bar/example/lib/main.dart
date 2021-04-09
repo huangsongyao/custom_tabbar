@@ -28,7 +28,10 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: TestCustomTabBar(
+        title: 'test tabbar',
+      ),
     );
   }
 }
@@ -80,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
             HSYCustomTabBarItemConfigs(text: '已登录')
           ],
           indicatorConfig:
-          HSYCustomTabBarIndicatorConfig.indicator3(Size(20.0, 2.0)),
+              HSYCustomTabBarIndicatorConfig.indicator3(Size(20.0, 2.0)),
         ),
         onChanged: (int index, HSYCustomTabBarItemConfigs itemConfigs) {
           setState(() {
@@ -105,6 +108,84 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class TestCustomTabBar extends StatefulWidget {
+  final String title;
+
+  TestCustomTabBar({
+    Key key,
+    this.title,
+  }) : super(key: key);
+
+  @override
+  _TestCustomTabBarState createState() => _TestCustomTabBarState();
+}
+
+class _TestCustomTabBarState extends State<TestCustomTabBar>
+    with TickerProviderStateMixin {
+  TabController _tabController;
+  List<HSYCustomTabBarItemConfigs> _configs;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _configs = [
+      HSYCustomTabBarItemConfigs(text: '已入金'),
+      HSYCustomTabBarItemConfigs(text: '已注册'),
+      HSYCustomTabBarItemConfigs(text: '已交易'),
+      HSYCustomTabBarItemConfigs(text: '已认证'),
+      HSYCustomTabBarItemConfigs(text: '已理财'),
+      HSYCustomTabBarItemConfigs(text: '已登录')
+    ];
+    _tabController = TabController(
+      length: _configs.length,
+      vsync: this,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
+      ),
+      body: Column(
+        children: [
+          HSYCustomTabBar(
+            tabController: _tabController,
+            initTabBarConfigs: HSYCustomTabBarConfigs(
+              itemConfigs: _configs,
+              indicatorConfig:
+                  HSYCustomTabBarIndicatorConfig.indicator3(Size(20.0, 2.0)),
+            ),
+            onChanged: (int index, HSYCustomTabBarItemConfigs itemConfigs) {
+              print(
+                  '------------index=${index}----------itemConfigs.text:${itemConfigs.text}');
+            },
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: _tabController,
+              children: _configs.map((item) {
+                return Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                    item.text,
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
+        ],
       ),
     );
   }
