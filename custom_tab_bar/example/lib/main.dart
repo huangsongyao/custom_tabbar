@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
-      home: TestCustomTabBar(
+      home: TestCustomTabBar2(
         title: 'test tabbar',
       ),
     );
@@ -147,8 +147,9 @@ class _TestCustomTabBarState extends State<TestCustomTabBar>
       length: _configs.length,
       vsync: this,
     )..addListener(() {
-      print('------------_tabController.index=${_tabController.index}---------');
-    });
+        print(
+            '------------_tabController.index=${_tabController.index}---------');
+      });
   }
 
   @override
@@ -190,5 +191,185 @@ class _TestCustomTabBarState extends State<TestCustomTabBar>
         ],
       ),
     );
+  }
+}
+
+class TestCustomTabBar2 extends StatefulWidget {
+  final String title;
+
+  TestCustomTabBar2({
+    Key key,
+    this.title,
+  }) : super(key: key);
+
+  @override
+  _TestCustomTabBar2State createState() => _TestCustomTabBar2State();
+}
+
+class _TestCustomTabBar2State extends State<TestCustomTabBar2>
+    with TickerProviderStateMixin {
+  TabController _tabController;
+  ScrollController _scrollController;
+  List<HSYCustomTabBarItemConfigs> _configs;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _configs = [
+      HSYCustomTabBarItemConfigs(text: '已入金'),
+      HSYCustomTabBarItemConfigs(text: '已注册'),
+      HSYCustomTabBarItemConfigs(text: '已交易'),
+      HSYCustomTabBarItemConfigs(text: '已认证'),
+      HSYCustomTabBarItemConfigs(text: '已理财'),
+      HSYCustomTabBarItemConfigs(text: '已登录')
+    ];
+    _tabController = TabController(
+      length: _configs.length,
+      vsync: this,
+    )..addListener(() {
+        print(
+            '------------_tabController.index=${_tabController.index}---------');
+      });
+
+    _scrollController = ScrollController()
+      ..addListener(
+        () {},
+      );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
+      ),
+      body: NestedScrollView(
+        controller: _scrollController,
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverOverlapAbsorber(
+              handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+              sliver: SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    Container(
+                      color: Colors.black,
+                      height: 100,
+                    ),
+                    Container(
+                      color: Colors.black26,
+                      height: 100,
+                    ),
+                    Container(
+                      color: Colors.cyanAccent,
+                      height: 100,
+                    ),
+                    Container(
+                      color: Colors.cyan,
+                      height: 100,
+                    ),
+                    Container(
+                      color: Colors.amber,
+                      height: 100,
+                    ),
+                    Container(
+                      color: Colors.black38,
+                      height: 100,
+                    ),
+                    Container(
+                      color: Colors.blue,
+                      height: 100,
+                    ),
+                    Container(
+                      color: Colors.deepOrange,
+                      height: 100,
+                    ),
+                    Container(
+                      color: Colors.black,
+                      height: 100,
+                    ),
+                    Container(
+                      color: Colors.greenAccent,
+                      height: 100,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SliverPersistentHeader(
+              delegate: _SliverPersistentHeaderDelegate(
+                child: HSYCustomTabBar(
+                  tabController: _tabController,
+                  initTabBarConfigs: HSYCustomTabBarConfigs(
+                    itemConfigs: _configs,
+                    indicatorConfig: HSYCustomTabBarIndicatorConfig.indicator3(
+                        Size(20.0, 2.0)),
+                  ),
+                ),
+                persistentHeaderHeights: kToolbarHeight,
+              ),
+              pinned: true,
+              floating: true,
+            ),
+          ];
+        },
+        body: Container(
+          color: Colors.limeAccent,
+          height: MediaQuery.of(context).size.height -
+              MediaQuery.of(context).padding.top -
+              kToolbarHeight -
+              kToolbarHeight,
+          child: TabBarView(
+            controller: _tabController,
+            children: _configs.map((item) {
+              return Container(
+                child: ListView.builder(
+                  itemBuilder: (BuildContext context, int index) {
+                    return Text('${index}');
+                  },
+                  itemCount: (_configs.indexOf(item) == 1 ? 10 : 100),
+                ),
+              );
+            }).toList(),
+          ),
+        ), //SliverList(),
+      ),
+    );
+  }
+}
+
+class _SliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
+  final Widget child;
+  final double persistentHeaderHeights;
+
+  _SliverPersistentHeaderDelegate({
+    @required this.child,
+    @required this.persistentHeaderHeights,
+  });
+
+  @override
+  double get minExtent => this.persistentHeaderHeights;
+
+  @override
+  double get maxExtent => this.persistentHeaderHeights;
+
+  @override
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
+    return SizedBox.expand(
+      child: this.child,
+    );
+  }
+
+  @override
+  bool shouldRebuild(_SliverPersistentHeaderDelegate oldDelegate) {
+    return true;
   }
 }
