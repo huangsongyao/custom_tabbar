@@ -25,12 +25,16 @@ class HSYCustomTabBarItemConfigs {
   /// 如果item的text和icon同时存在，则[offsets]表示二者间的间距
   final num offsets;
 
+  /// 预留一个dynamic类型，来传递额外类型
+  final dynamic object;
+
   HSYCustomTabBarItemConfigs({
     @required this.text,
     this.iconSize = const Size(35.0, 35.0),
     this.horizontals = 10.0,
     this.offsets = 5.0,
     this.icons,
+    this.object,
   });
 }
 

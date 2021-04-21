@@ -174,23 +174,6 @@ class _TestCustomTabBarState extends State<TestCustomTabBar>
                   '------------index=${index}----------itemConfigs.text:${itemConfigs.text}');
             },
           ),
-          Expanded(
-            child: NestedScrollView(
-
-            ),
-            // child: TabBarView(
-            //   controller: _tabController,
-            //   children: _configs.map((item) {
-            //     return Container(
-            //       alignment: Alignment.center,
-            //       child: Text(
-            //         item.text,
-            //         style: Theme.of(context).textTheme.headline4,
-            //       ),
-            //     );
-            //   }).toList(),
-            // ),
-          ),
         ],
       ),
     );
