@@ -75,6 +75,7 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
             Future.delayed(
               this.widget.animatedDuration,
               () {
+                /// 切换其他tab时，通过这里返回事件
                 this.widget.onChanged(
                       _tabController.index,
                       this
@@ -165,6 +166,7 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
       'index位置越界',
     );
     if (_selectedIndex == index && this.widget.onChanged != null) {
+      /// 点击同一个tab时，通过这里返回事件
       this.widget.onChanged(_selectedIndex, item);
     }
     _selectedIndex = index;
