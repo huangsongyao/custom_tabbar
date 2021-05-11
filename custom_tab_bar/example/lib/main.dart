@@ -188,6 +188,20 @@ class _TestCustomTabBarState extends State<TestCustomTabBar>
               itemConfigs: _configs,
               indicatorConfig:
                   HSYCustomTabBarIndicatorConfig.indicator3(Size(20.0, 2.0)),
+              positioneds: [
+                Positioned(
+                  child: _buildOverlay(
+                    heights: kToolbarHeight,
+                  ),
+                ),
+                Positioned(
+                  child: _buildOverlay(
+                    heights: kToolbarHeight,
+                    isLeft: false,
+                  ),
+                  right: 0.0,
+                ),
+              ],
             ),
             onChanged: (int index, HSYCustomTabBarItemConfigs itemConfigs,
                 bool toChangedOthers) {
@@ -198,5 +212,31 @@ class _TestCustomTabBarState extends State<TestCustomTabBar>
         ],
       ),
     );
+  }
+
+  Widget _buildOverlay({
+    bool isLeft = true,
+    @required num heights,
+  }) {
+    final Widget overlay = Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: (isLeft
+              ? [
+                  Colors.white,
+                  Colors.white.withOpacity(0),
+                ]
+              : [
+                  Colors.white.withOpacity(0),
+                  Colors.white,
+                ]),
+          begin: Alignment.centerLeft,
+          end: Alignment.centerRight,
+        ),
+      ),
+      height: heights,
+      width: 40.0,
+    );
+    return overlay;
   }
 }

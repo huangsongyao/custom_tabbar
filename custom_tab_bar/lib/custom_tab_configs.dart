@@ -127,11 +127,14 @@ class HSYCustomTabBarConfigs {
   /// item的数据集合
   final List<HSYCustomTabBarItemConfigs> itemConfigs;
 
-  /// tabbar的指示器配置数据
+  /// TabBar的指示器配置数据
   final HSYCustomTabBarIndicatorConfig indicatorConfig;
 
   /// TabBar的padding
   final EdgeInsets tabPadding;
+
+  /// TabBar上层覆盖Widget
+  final List<Positioned> positioneds;
 
   /// item的text的选中高亮的文本状态
   final TextStyle selectedStyle;
@@ -144,6 +147,7 @@ class HSYCustomTabBarConfigs {
     this.indicatorConfig,
     this.iconAlign = HSYCustomTabBarAlign.IconInTop,
     this.tabPadding = EdgeInsets.zero,
+    this.positioneds = const [],
     this.unselectedStyle,
     this.selectedStyle,
   });
@@ -154,6 +158,10 @@ class HSYCustomTabBarConfigs {
 
   HSYCustomTabBarIndicatorConfig get tabBarIndicatorConfig {
     return (this.indicatorConfig ?? HSYCustomTabBarIndicatorConfig.indicator());
+  }
+
+  List<Positioned> get tabBarPositioneds {
+    return (this.positioneds ?? []);
   }
 
   TextStyle selectedHighStyle(bool selected) {

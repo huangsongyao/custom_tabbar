@@ -111,22 +111,8 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
         this.widget.initTabBarConfigs.selectedHighStyle(true);
     final TextStyle unselected =
         this.widget.initTabBarConfigs.selectedHighStyle(false);
-    return Container(
-      alignment: Alignment.center,
-      height: this.widget.tabHeights,
-      width: MediaQuery.of(context).size.width,
-      decoration: this.widget.backgroundDecoration ??
-          BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Colors.white,
-                Colors.white,
-              ],
-            ),
-          ),
-      padding: (this.widget.initTabBarConfigs.tabPadding ??
-          this.widget.tabBarPadding),
-      child: TabBar(
+    final List<Widget> children = [
+      TabBar(
         isScrollable: true,
         controller: _tabController,
         indicator: CustomIndicator(
@@ -160,6 +146,30 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
                 );
               }).toList()
             : []),
+      ),
+    ];
+    this.widget.initTabBarConfigs.tabBarPositioneds.forEach(
+      (element) {
+        children.cast().add(element);
+      },
+    );
+    return Container(
+      alignment: Alignment.center,
+      height: this.widget.tabHeights,
+      width: MediaQuery.of(context).size.width,
+      decoration: this.widget.backgroundDecoration ??
+          BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.white,
+                Colors.white,
+              ],
+            ),
+          ),
+      padding: (this.widget.initTabBarConfigs.tabPadding ??
+          this.widget.tabBarPadding),
+      child: Stack(
+        children: children,
       ),
     );
   }
