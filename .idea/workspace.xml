@@ -19,12 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5b1d826-dc0e-4f71-a30a-9559fde7efc0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/custom_tabbar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/custom_tabbar.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_tab_bar/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/custom_tab_bar/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_tab_bar/lib/custom_tab_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/custom_tab_bar/lib/custom_tab_bar.dart" afterDir="false" />
-    </list>
+    <list default="true" id="e5b1d826-dc0e-4f71-a30a-9559fde7efc0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,6 +82,22 @@
       <screen x="755" y="-1057" width="1920" height="1057" />
     </state>
     <state x="1452" y="-732" key="#com.intellij.ide.util.TreeFileChooserDialog/-1165.-1057.1920.1057/0.23.1792.1028/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1620700452888" />
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1620708996592">
+      <screen x="755" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.bottom/-1165.-1057.1920.1057/0.23.1792.1028/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1620708996592" />
+    <state width="1878" height="290" key="GridCell.Tab.0.center" timestamp="1620708996592">
+      <screen x="755" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.center/-1165.-1057.1920.1057/0.23.1792.1028/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1620708996592" />
+    <state width="1878" height="290" key="GridCell.Tab.0.left" timestamp="1620708996591">
+      <screen x="755" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.left/-1165.-1057.1920.1057/0.23.1792.1028/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1620708996591" />
+    <state width="1878" height="290" key="GridCell.Tab.0.right" timestamp="1620708996592">
+      <screen x="755" y="-1057" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="290" key="GridCell.Tab.0.right/-1165.-1057.1920.1057/0.23.1792.1028/755.-1057.1920.1057@755.-1057.1920.1057" timestamp="1620708996592" />
     <state x="1216" y="-890" key="SettingsEditor" timestamp="1620700463359">
       <screen x="755" y="-1057" width="1920" height="1057" />
     </state>
