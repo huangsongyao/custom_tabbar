@@ -130,6 +130,9 @@ class HSYCustomTabBarConfigs {
   /// tabbar的指示器配置数据
   final HSYCustomTabBarIndicatorConfig indicatorConfig;
 
+  /// TabBar的padding
+  final EdgeInsets tabPadding;
+
   /// item的text的选中高亮的文本状态
   final TextStyle selectedStyle;
 
@@ -140,6 +143,7 @@ class HSYCustomTabBarConfigs {
     @required this.itemConfigs,
     this.indicatorConfig,
     this.iconAlign = HSYCustomTabBarAlign.IconInTop,
+    this.tabPadding = EdgeInsets.zero,
     this.unselectedStyle,
     this.selectedStyle,
   });

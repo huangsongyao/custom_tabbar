@@ -3,8 +3,10 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/custom_tab_bar/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/custom_tab_bar/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/custom_tab_bar/build" />
+      <excludeFolder url="file://$MODULE_DIR$/custom_tab_bar/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/custom_tab_bar/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/custom_tab_bar/example/build" />
     </content>

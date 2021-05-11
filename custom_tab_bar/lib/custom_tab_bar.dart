@@ -10,13 +10,28 @@ typedef HSYCustomTabBarChangedItem = void Function(
     int index, HSYCustomTabBarItemConfigs itemConfigs);
 
 class HSYCustomTabBar extends StatefulWidget {
+  /// 默认选中的位置
   final int initSelectedIndex;
+
+  /// TabBar的padding
   final EdgeInsets tabBarPadding;
+
+  /// TabBar的背景
   final BoxDecoration backgroundDecoration;
+
+  /// TabBar改变选中的item后的事件
   final HSYCustomTabBarChangedItem onChanged;
+
+  /// TabBar的数据源
   final HSYCustomTabBarConfigs initTabBarConfigs;
+
+  /// TabBar控制器
   final TabController tabController;
+
+  /// 动画时间
   final Duration animatedDuration;
+
+  /// TabBar高度
   final double tabHeights;
 
   HSYCustomTabBar({
@@ -100,7 +115,8 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
               ],
             ),
           ),
-      padding: this.widget.tabBarPadding,
+      padding: (this.widget.initTabBarConfigs.tabPadding ??
+          this.widget.tabBarPadding),
       child: TabBar(
         isScrollable: true,
         controller: _tabController,
@@ -116,6 +132,7 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
         labelColor: selected.color,
         unselectedLabelStyle: unselected,
         unselectedLabelColor: unselected.color,
+        labelPadding: EdgeInsets.zero,
         tabs: (this.widget.initTabBarConfigs.tabBarItemConfigs.isNotEmpty
             ? this.widget.initTabBarConfigs.tabBarItemConfigs.map((item) {
                 final int index = this
@@ -125,10 +142,6 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
                     .indexOf(item);
                 return _HSYCustomTabBarItem(
                   configs: item,
-                  textStyle: this
-                      .widget
-                      .initTabBarConfigs
-                      .selectedHighStyle((_selectedIndex == index)),
                   onTap: (HSYCustomTabBarItemConfigs item) {
                     _animatedTo(
                       index: index,
@@ -165,14 +178,12 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
 
 class _HSYCustomTabBarItem extends StatelessWidget {
   final bool showIcons;
-  final TextStyle textStyle;
   final HSYCustomTabBarAlign align;
   final HSYCustomTabBarItemConfigs configs;
   final HSYCustomTabBarGesture onTap;
 
   _HSYCustomTabBarItem({
     Key key,
-    this.textStyle,
     this.showIcons = false,
     this.align = HSYCustomTabBarAlign.IconInTop,
     @required this.configs,
@@ -183,7 +194,6 @@ class _HSYCustomTabBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final Text text = Text(
       this.configs.text,
-      // style: this.textStyle,
     );
     return GestureDetector(
       child: Container(

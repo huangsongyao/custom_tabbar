@@ -136,12 +136,30 @@ class _TestCustomTabBarState extends State<TestCustomTabBar>
     super.initState();
 
     _configs = [
-      HSYCustomTabBarItemConfigs(text: '已入金'),
-      HSYCustomTabBarItemConfigs(text: '已注册'),
-      HSYCustomTabBarItemConfigs(text: '已交易'),
-      HSYCustomTabBarItemConfigs(text: '已认证'),
-      HSYCustomTabBarItemConfigs(text: '已理财'),
-      HSYCustomTabBarItemConfigs(text: '已登录')
+      HSYCustomTabBarItemConfigs(
+        text: '已入金',
+        horizontals: 16.0,
+      ),
+      HSYCustomTabBarItemConfigs(
+        text: '已注册',
+        horizontals: 16.0,
+      ),
+      HSYCustomTabBarItemConfigs(
+        text: '已交易',
+        horizontals: 16.0,
+      ),
+      HSYCustomTabBarItemConfigs(
+        text: '已认证',
+        horizontals: 16.0,
+      ),
+      HSYCustomTabBarItemConfigs(
+        text: '已理财',
+        horizontals: 16.0,
+      ),
+      HSYCustomTabBarItemConfigs(
+        text: '已登录',
+        horizontals: 16.0,
+      ),
     ];
     _tabController = TabController(
       length: _configs.length,
@@ -179,4 +197,3 @@ class _TestCustomTabBarState extends State<TestCustomTabBar>
     );
   }
 }
-
