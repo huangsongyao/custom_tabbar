@@ -8,15 +8,12 @@ typedef HSYCustomTabBarGesture = void Function(
     HSYCustomTabBarItemConfigs itemConfigs);
 typedef HSYCustomTabBarChangedItem = void Function(
     int index, HSYCustomTabBarItemConfigs itemConfigs);
-typedef HSYCustomTabBarStreamTabs = StreamController<int> Function(
-    int currentIndex);
 
 class HSYCustomTabBar extends StatefulWidget {
   final int initSelectedIndex;
   final EdgeInsets tabBarPadding;
   final BoxDecoration backgroundDecoration;
   final HSYCustomTabBarChangedItem onChanged;
-  final HSYCustomTabBarStreamTabs onStreamTabs;
   final HSYCustomTabBarConfigs initTabBarConfigs;
   final TabController tabController;
   final Duration animatedDuration;
@@ -30,7 +27,6 @@ class HSYCustomTabBar extends StatefulWidget {
     this.initSelectedIndex = 0,
     this.backgroundDecoration,
     this.tabController,
-    this.onStreamTabs,
     this.onChanged,
   });
 
@@ -76,18 +72,6 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
           }
         },
       );
-    if (this.widget.onStreamTabs != null) {
-      this.widget.onStreamTabs(_selectedIndex).stream.listen((nextIndex) {
-        assert(
-          (this.widget.initTabBarConfigs.tabBarItemConfigs ?? []).isNotEmpty,
-          'tab数据不能为空',
-        );
-        _animatedTo(
-          index: nextIndex,
-          item: this.widget.initTabBarConfigs.tabBarItemConfigs[nextIndex],
-        );
-      });
-    }
   }
 
   @override
