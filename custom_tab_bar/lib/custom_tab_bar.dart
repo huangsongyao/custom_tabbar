@@ -34,12 +34,16 @@ class HSYCustomTabBar extends StatefulWidget {
   /// TabBar高度
   final double tabHeights;
 
+  /// 是否需要延迟监听，默认为true，为true时，会延迟[animatedDuration]的动画时间后再执行[onChanged]事件
+  final bool delayedListener;
+
   HSYCustomTabBar({
     @required this.initTabBarConfigs,
     this.tabHeights = kToolbarHeight,
     this.tabBarPadding = EdgeInsets.zero,
     this.animatedDuration = const Duration(milliseconds: 350),
     this.initSelectedIndex = 0,
+    this.delayedListener = true,
     this.backgroundDecoration,
     this.tabController,
     this.onChanged,
@@ -73,9 +77,12 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
                   _tabController.animation.value &&
               this.widget.onChanged != null) {
             Future.delayed(
-              this.widget.animatedDuration,
+              (this.widget.delayedListener
+                  ? this.widget.animatedDuration
+                  : Duration()),
               () {
                 /// 切换其他tab时，通过这里返回事件
+                print('切换其他tab时，通过这里返回事件');
                 this.widget.onChanged(
                       _tabController.index,
                       this

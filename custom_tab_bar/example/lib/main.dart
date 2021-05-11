@@ -182,6 +182,7 @@ class _TestCustomTabBarState extends State<TestCustomTabBar>
       body: Column(
         children: [
           HSYCustomTabBar(
+            delayedListener: false,
             tabController: _tabController,
             initTabBarConfigs: HSYCustomTabBarConfigs(
               itemConfigs: _configs,
