@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 typedef HSYCustomTabBarGesture = void Function(
     HSYCustomTabBarItemConfigs itemConfigs);
 typedef HSYCustomTabBarChangedItem = void Function(
-    int index, HSYCustomTabBarItemConfigs itemConfigs);
+    int index, HSYCustomTabBarItemConfigs itemConfigs, bool toChangedOthers);
 
 class HSYCustomTabBar extends StatefulWidget {
   /// 默认选中的位置
@@ -82,6 +82,7 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
                           .widget
                           .initTabBarConfigs
                           .itemConfigs[_tabController.index],
+                      true,
                     );
               },
             );
@@ -167,7 +168,11 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
     );
     if (_selectedIndex == index && this.widget.onChanged != null) {
       /// 点击同一个tab时，通过这里返回事件
-      this.widget.onChanged(_selectedIndex, item);
+      this.widget.onChanged(
+            _selectedIndex,
+            item,
+            false,
+          );
     }
     _selectedIndex = index;
     _tabController.animateTo(

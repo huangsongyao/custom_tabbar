@@ -85,7 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
           indicatorConfig:
               HSYCustomTabBarIndicatorConfig.indicator3(Size(20.0, 2.0)),
         ),
-        onChanged: (int index, HSYCustomTabBarItemConfigs itemConfigs) {
+        onChanged: (int index, HSYCustomTabBarItemConfigs itemConfigs,
+            bool toChangedOthers) {
           setState(() {
             _string = itemConfigs.text;
             _counter = index;
@@ -187,7 +188,8 @@ class _TestCustomTabBarState extends State<TestCustomTabBar>
               indicatorConfig:
                   HSYCustomTabBarIndicatorConfig.indicator3(Size(20.0, 2.0)),
             ),
-            onChanged: (int index, HSYCustomTabBarItemConfigs itemConfigs) {
+            onChanged: (int index, HSYCustomTabBarItemConfigs itemConfigs,
+                bool toChangedOthers) {
               print(
                   '------------index=${index}----------itemConfigs.text:${itemConfigs.text}');
             },
