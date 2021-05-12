@@ -29,8 +29,8 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
-      home: TestCustomTabBar(
-        title: 'test tabbar',
+      home: MyHomePage(
+        title: 'TabBar',
       ),
     );
   }
@@ -55,7 +55,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   String _string = '已入金';
 
   @override
@@ -72,42 +71,31 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      bottomNavigationBar: HSYCustomTabBar(
-        initTabBarConfigs: HSYCustomTabBarConfigs(
-          itemConfigs: [
-            HSYCustomTabBarItemConfigs(text: '已入金'),
-            HSYCustomTabBarItemConfigs(text: '已注册'),
-            HSYCustomTabBarItemConfigs(text: '已交易'),
-            HSYCustomTabBarItemConfigs(text: '已认证'),
-            HSYCustomTabBarItemConfigs(text: '已理财'),
-            HSYCustomTabBarItemConfigs(text: '已登录')
-          ],
-          indicatorConfig:
-              HSYCustomTabBarIndicatorConfig.indicator3(Size(20.0, 2.0)),
-        ),
-        onChanged: (int index, HSYCustomTabBarItemConfigs itemConfigs,
-            bool toChangedOthers) {
-          setState(() {
-            _string = itemConfigs.text;
-            _counter = index;
-            print('--------------${_string}-----------${_counter}');
-          });
-        },
-      ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
+        child: GestureDetector(
+          child: Container(
+            height: 100,
+            color: Colors.amber,
+            width: MediaQuery.of(context).size.width,
+            alignment: Alignment.center,
+            child: Text(
               _string,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+          ),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return TestCustomTabBar(
+                    title: '测试自定义TabBar',
+                  );
+                },
+              ),
+            );
+          },
         ),
       ),
     );

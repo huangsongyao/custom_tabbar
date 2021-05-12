@@ -101,8 +101,10 @@ class _HSYCustomTabBarState extends State<HSYCustomTabBar>
   @override
   void dispose() {
     // TODO: implement dispose
+    if (this.widget.tabController == null) {
+      _tabController.dispose();
+    }
     super.dispose();
-    _tabController.dispose();
   }
 
   @override
